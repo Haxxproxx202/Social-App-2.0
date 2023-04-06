@@ -50,6 +50,7 @@ ol {
     color:#f3f7cc;
     font-size:20px;
     margin-right:10%;
+    cursor: pointer;
 }
 
 #header ul.menu {

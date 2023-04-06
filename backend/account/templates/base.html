@@ -9,7 +9,7 @@
 <body>
 
   <div id="header">
-    <span class="logo">Bookmarks</span>
+    <span class="logo" onclick="window.location.href='/account'">Bookmarks</span>
     {% if request.user.is_authenticated %}
     <ul class="menu">
       {% if section == "dashboard" %}

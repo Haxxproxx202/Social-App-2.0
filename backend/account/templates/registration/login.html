@@ -10,7 +10,7 @@
       Try again.
     </p>
   {% else %}
-    <p>Fill out the form below</p>
+    <p>Fill out the form below to log in. If you do not have an account yet, you can create it <a href="{% url 'register' %}">here</a>.</p>
   {% endif %}
   <div class="login-form">
     <form action="{% url 'login' %}" method="POST">
