@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from .models import Profile
+from django.contrib import messages
 
 
 # def user_login(request):
@@ -11,8 +12,9 @@ from .models import Profile
 #         form = LoginForm(request.POST)
 #         if form.is_valid():
 #             cd = form.cleaned_data
-#             user = authenticate(username=cd['username'],
+#             user = authenticate(username=cd['username'],    Mozna uzyc get_user()
 #                                 password=cd['password'])
+#
 #             if user is not None:
 #                 if user.is_active:
 #                     login(request, user)
@@ -55,6 +57,9 @@ def edit(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
+            messages.success(request, 'Profile updated successfully')
+        else:
+            messages.error(request, '')
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
