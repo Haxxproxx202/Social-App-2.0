@@ -21,4 +21,7 @@ class Image(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        pass
+
 

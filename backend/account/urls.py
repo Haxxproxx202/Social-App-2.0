@@ -22,4 +22,9 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('register/', register, name='register'),
     path('edit/', edit, name='edit'),
+
 ]
+
+
+x="https://127.0.0.1:8000/images/create/?title=cokolwiek&url=https://assets.winni.in/product/primary/2021/10/55603.jpeg"
+yy = "https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bunch-of-bananas-67e91d5.jpg"
