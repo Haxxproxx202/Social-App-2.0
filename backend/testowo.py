@@ -1,12 +1,22 @@
-text = 'Pierwsza.Druga.Trzecia.Czwarta'
+# text = 'Pierwsza.Druga.Trzecia.Czwarta'
+#
+# new_text = text.rsplit('.', 1)[1].lower()
+# new = text.split('.')
+#
+# print(new_text)
+#
+# print(new)
+#
+# newww = text[::-1]
+#
+# print(newww)
 
-new_text = text.rsplit('.', 1)[1].lower()
-new = text.split('.')
 
-print(new_text)
+def func(x):
+    func2 = lambda x: x + 5
+    return func2(x) + 85
 
-print(new)
+func3 = lambda x,y=7:x+y
 
-newww = text[::-1]
-
-print(newww)
+print(func3(5))
+print(func(2))

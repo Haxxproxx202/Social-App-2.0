@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os.path
 from pathlib import Path
 import environ
+from django.urls import reverse_lazy
 
 env = environ.Env()
 environ.Env.read_env()
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     # 3rd party Apps
     'social_django',
     'django_extensions',
+    'easy_thumbnails',
 
 ]
 
@@ -153,3 +155,8 @@ AUTHENTICATION_BACKENDS = [
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('GOOGLE_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env('GOOGLE_SECRET')
 # SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
+THUMBNAIL_DEBUG = True
